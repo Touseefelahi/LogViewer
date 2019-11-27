@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <Authors>Touseef Elahi</Authors>
+    <Company>Stira.sa</Company>
+    <Product>Log viewer</Product>
+    <PackageId>LogViewer</PackageId>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Logger.Core\Logger.Core.csproj" />
+  </ItemGroup>
+</Project>
