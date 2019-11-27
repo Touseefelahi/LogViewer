@@ -1,12 +1,12 @@
-﻿namespace Logger.Core.ViewModels
+﻿namespace Logger.Core
 {
     public class LogControlViewModel
     {
-        public ILogger Logger { get; set; }
-
         public LogControlViewModel(ILogger logger)
         {
             Logger = logger;
         }
+
+        public ILogger Logger { get; set; }
     }
 }

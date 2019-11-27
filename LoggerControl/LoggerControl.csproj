@@ -9,9 +9,10 @@
     <PackageId>LogViewer</PackageId>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Logger.Core\Logger.Core.csproj" />
+    <ProjectReference Include="..\Logger.Core\SimpleLogger.Core.csproj" />
   </ItemGroup>
 </Project>

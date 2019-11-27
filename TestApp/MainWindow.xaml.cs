@@ -14,7 +14,7 @@ namespace TestApp
         {
             InitializeComponent();
             logger = new Logger.Core.Logger();
-            LogView.DataContext = new Logger.Core.ViewModels.LogControlViewModel(logger);
+            LogView.DataContext = new Logger.Core.LogControlViewModel(logger);
             logger.Log("Test App working");
             ShowException();
         }

@@ -1,7 +1,7 @@
 ﻿<UserControl x:Class="LoggerControl.Views.LogControl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
-             xmlns:logger="clr-namespace:Logger.Core;assembly=Logger.Core"
+             xmlns:logger="clr-namespace:Logger.Core;assembly=SimpleLogger.Core"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <UserControl.Resources>
         <ObjectDataProvider MethodName="GetValues"

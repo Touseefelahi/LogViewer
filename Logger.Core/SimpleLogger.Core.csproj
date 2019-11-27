@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Touseef Elahi</Authors>
+    <Company>Stira.sa</Company>
+    <Product>Log viewer core</Product>
+    <PackageId>SimpleLogger.Core</PackageId>
+    <Version>1.0.0</Version>
+  </PropertyGroup>
+</Project>
