@@ -7,8 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Logger.Core\SimpleLogger.Core.csproj" />
-    <ProjectReference Include="..\LoggerControl\LoggerControl.csproj" />
+    <PackageReference Include="LogViewer" Version="1.0.3" />
   </ItemGroup>
-
 </Project>

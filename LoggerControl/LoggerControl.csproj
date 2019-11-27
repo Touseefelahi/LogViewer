@@ -9,7 +9,17 @@
     <PackageId>LogViewer</PackageId>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <Version>1.0.1</Version>
+    <Version>1.0.3</Version>
+    <Description>
+      This is simple log viewer for WPF application
+      Source code: https://github.com/Touseefelahi/LogViewer
+    </Description>
+    <AssemblyVersion>1.0.1.0</AssemblyVersion>
+    <FileVersion>1.0.1.0</FileVersion>
+    <RepositoryUrl>https://github.com/Touseefelahi/LogViewer</RepositoryUrl>
+    <RepositoryType>Git</RepositoryType>
+    <PackageTags>Log</PackageTags>
+    <PackageReleaseNotes>Description added</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>

@@ -7,6 +7,11 @@
     <Company>Stira.sa</Company>
     <Product>Log viewer core</Product>
     <PackageId>SimpleLogger.Core</PackageId>
-    <Version>1.0.0</Version>
+    <Version>1.0.1</Version>
+    <Description>Logviewer core</Description>
+    <PackageProjectUrl>https://github.com/Touseefelahi/LogViewer</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Touseefelahi/LogViewer</RepositoryUrl>
+    <RepositoryType>Github</RepositoryType>
+    <PackageTags>Log</PackageTags>
   </PropertyGroup>
 </Project>
