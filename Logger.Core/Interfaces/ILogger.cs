@@ -8,6 +8,10 @@ namespace Logger.Core
     {
         LogLevel LogLevel { get; set; }
 
+        ObservableCollection<ILogModel> Logs { get; set; }
+
+        int LogLimit { get; set; }
+
         /// <summary>
         /// Logs info/warning/errors/debug messages
         /// </summary>
@@ -35,7 +39,5 @@ namespace Logger.Core
          [CallerMemberName] string origin = "",
          [CallerFilePath] string filePath = "",
          [CallerLineNumber] int lineNumber = 0);
-
-        ObservableCollection<ILogModel> Logs { get; set; }
     }
 }

@@ -17,10 +17,11 @@ namespace Logger.Core
             synchronization = SynchronizationContext.Current;
         }
 
+        public event PropertyChangedEventHandler PropertyChanged = (sender, e) => { };
+
         public ObservableCollection<ILogModel> Logs { get; set; }
         public LogLevel LogLevel { get; set; } = LogLevel.Warning;
-
-        public event PropertyChangedEventHandler PropertyChanged = (sender, e) => { };
+        public int LogLimit { get; set; } = 1000;
 
         public void Log(string message,
                         LogLevel level = LogLevel.Info,
@@ -57,12 +58,6 @@ namespace Logger.Core
             });
         }
 
-        private void Log(LogModel logModel)
-        {
-            synchronization.Send(_ => Logs.Add(logModel), null);
-            OnPropertyChanged(nameof(Logs));
-        }
-
         /// <summary>
         /// Call this to fire a <see cref="PropertyChanged"/> event
         /// </summary>
@@ -71,6 +66,19 @@ namespace Logger.Core
         {
             var handler = PropertyChanged;
             handler?.Invoke(this, new PropertyChangedEventArgs(name));
+        }
+
+        private void Log(LogModel logModel)
+        {
+            synchronization.Send(_ =>
+            {
+                Logs.Add(logModel);
+                if (Logs.Count > LogLimit)
+                {
+                    Logs.RemoveAt(0);
+                }
+            }, null);
+            OnPropertyChanged(nameof(Logs));
         }
     }
 }

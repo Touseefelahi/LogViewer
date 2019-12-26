@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Logger.Core;
+using System;
 using System.Collections.Specialized;
+using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace LoggerControl.Views
@@ -9,12 +12,30 @@ namespace LoggerControl.Views
     /// </summary>
     public partial class LogControl : UserControl
     {
+        public static readonly DependencyProperty IsDeveloperControlVisibleProperty =
+            DependencyProperty.Register("IsDeveloperControlVisible", typeof(bool), typeof(LogControl), new PropertyMetadata(true, OnDeveloperControlVisibilityChanged));
+
+        // Using a DependencyProperty as the backing store for LogCountLimit. This enables
+        // animation, styling, binding, etc...
+
         private bool autoScroll = true;
 
         public LogControl()
         {
             InitializeComponent();
             ((INotifyCollectionChanged)dataGridLogs.Items).CollectionChanged += CollectionChanged;
+        }
+
+        public bool IsDeveloperControlVisible
+        {
+            get => (bool)GetValue(IsDeveloperControlVisibleProperty);
+            set => SetValue(IsDeveloperControlVisibleProperty, value);
+        }
+
+        private static void OnDeveloperControlVisibilityChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var control = (LogControl)d;
+            control.DeveloperVisibilityChanged((bool)e.NewValue);
         }
 
         private static void ScrollToEnd(DataGrid datagrid)
@@ -24,6 +45,23 @@ namespace LoggerControl.Views
                 return;
             }
             datagrid.ScrollIntoView(datagrid.Items[datagrid.Items.Count - 1]);
+        }
+
+        private void DeveloperVisibilityChanged(bool newValue)
+        {
+            IsDeveloperControlVisible = newValue;
+            if (IsDeveloperControlVisible)
+            {
+                Sender.Visibility = Visibility.Visible;
+                Origin.Visibility = Visibility.Visible;
+                Line.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                Sender.Visibility = Visibility.Collapsed;
+                Origin.Visibility = Visibility.Collapsed;
+                Line.Visibility = Visibility.Collapsed;
+            }
         }
 
         private void CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)

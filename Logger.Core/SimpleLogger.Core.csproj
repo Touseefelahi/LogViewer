@@ -7,8 +7,8 @@
     <Company>Stira.sa</Company>
     <Product>Log viewer core</Product>
     <PackageId>SimpleLogger.Core</PackageId>
-    <Version>1.0.2</Version>
-    <Description>Logviewer core</Description>
+    <Version>1.0.4</Version>
+    <Description>Logviewer core [Default Log Limit Count =1000, it can be changed by changing the LogLimit property]</Description>
     <PackageProjectUrl>https://github.com/Touseefelahi/LogViewer</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Touseefelahi/LogViewer</RepositoryUrl>
     <RepositoryType>Github</RepositoryType>

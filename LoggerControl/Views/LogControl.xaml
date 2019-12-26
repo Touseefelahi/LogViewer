@@ -11,6 +11,7 @@
                 <x:Type TypeName="logger:LogLevel" />
             </ObjectDataProvider.MethodParameters>
         </ObjectDataProvider>
+        <BooleanToVisibilityConverter x:Key="BoolToVis" />
     </UserControl.Resources>
     <Grid>
         <DataGrid x:Name="dataGridLogs" ItemsSource="{Binding Logger.Logs}" AutoGenerateColumns="False" IsReadOnly="True">
@@ -18,9 +19,9 @@
                 <DataGridTextColumn Header="Time" Binding="{Binding Time}"  Width="120"></DataGridTextColumn>
                 <DataGridTextColumn Header="Level"  Binding="{Binding Level}" Width="70"></DataGridTextColumn>
                 <DataGridTextColumn Header="Message" Binding="{Binding Message}" Width="*"></DataGridTextColumn>
-                <DataGridTextColumn Header="Sender" Binding="{Binding FilePath}" Width="80"></DataGridTextColumn>
-                <DataGridTextColumn Header="Origin" Binding="{Binding Origin}" Width="100"></DataGridTextColumn>
-                <DataGridTextColumn Header="Line#" Binding="{Binding LineNumber}" Width="50"></DataGridTextColumn>
+                <DataGridTextColumn x:Name="Sender" Header="Sender"  Binding="{Binding FilePath}" Width="80"></DataGridTextColumn>
+                <DataGridTextColumn x:Name="Origin" Header="Origin"  Binding="{Binding Origin}" Width="100"></DataGridTextColumn>
+                <DataGridTextColumn x:Name="Line" Header="Line#"  Binding="{Binding LineNumber}" Width="50"></DataGridTextColumn>
             </DataGrid.Columns>
             <DataGrid.ContextMenu>
                 <ContextMenu>
