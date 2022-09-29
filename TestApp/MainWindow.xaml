@@ -8,6 +8,6 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <logger:LogControl x:Name="LogView"  IsDeveloperControlVisible="False" />
+        <logger:LogControl x:Name="LogView"  IsDeveloperControlVisible="True" />
     </Grid>
 </Window>
