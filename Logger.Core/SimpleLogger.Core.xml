@@ -1,0 +1,223 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SimpleLogger.Core</name>
+    </assembly>
+    <members>
+        <member name="T:Logger.Core.LogLevel">
+            <summary>
+            Log level for filteration
+            </summary>
+        </member>
+        <member name="F:Logger.Core.LogLevel.Off">
+            <summary>
+            Nothing will be logged
+            </summary>
+        </member>
+        <member name="F:Logger.Core.LogLevel.Info">
+            <summary>
+            Only info will be logged
+            </summary>
+        </member>
+        <member name="F:Logger.Core.LogLevel.Error">
+            <summary>
+            Error and Info will be logged
+            </summary>
+        </member>
+        <member name="F:Logger.Core.LogLevel.Warning">
+            <summary>
+            Warning, Errors and Info will be logged
+            </summary>
+        </member>
+        <member name="F:Logger.Core.LogLevel.Debug">
+            <summary>
+            Everything will be logged
+            </summary>
+        </member>
+        <member name="T:Logger.Core.ILogger">
+            <summary>
+            Logger interface
+            </summary>
+        </member>
+        <member name="P:Logger.Core.ILogger.LogLevel">
+            <summary>
+            Log Level
+            </summary>
+        </member>
+        <member name="P:Logger.Core.ILogger.Logs">
+            <summary>
+            All logs for current instance
+            </summary>
+        </member>
+        <member name="P:Logger.Core.ILogger.LogLimit">
+            <summary>
+            Log limit for display
+            </summary>
+        </member>
+        <member name="M:Logger.Core.ILogger.Log(System.String,Logger.Core.LogLevel,System.String,System.String,System.Int32)">
+            <summary>
+            Logs info/warning/errors/debug messages
+            </summary>
+            <param name="message">Message to log</param>
+            <param name="level">Log level</param>
+            <param name="origin">Origin of log</param>
+            <param name="filePath">File path</param>
+            <param name="lineNumber">Line number</param>
+        </member>
+        <member name="M:Logger.Core.ILogger.Log(System.Exception,System.String,System.String,System.Int32)">
+            <summary>
+            Logs the exception as a Error level
+            </summary>
+            <param name="ex">Exception</param>
+            <param name="origin">Origin of exception</param>
+            <param name="filePath">File path</param>
+            <param name="lineNumber">Line number</param>
+        </member>
+        <member name="T:Logger.Core.ILogModel">
+            <summary>
+            Log model interface
+            </summary>
+        </member>
+        <member name="P:Logger.Core.ILogModel.Message">
+            <summary>
+            Message to log
+            </summary>
+        </member>
+        <member name="P:Logger.Core.ILogModel.LineNumber">
+            <summary>
+            Line number where log coming from (Sets automatically using Reflection)
+            </summary>
+        </member>
+        <member name="P:Logger.Core.ILogModel.FilePath">
+            <summary>
+            File path where log coming from (Sets automatically using Reflection)
+            </summary>
+        </member>
+        <member name="P:Logger.Core.ILogModel.Origin">
+            <summary>
+            Origin of Log (Sets automatically using Reflection)
+            </summary>
+        </member>
+        <member name="P:Logger.Core.ILogModel.Level">
+            <summary>
+            Level to filter out logs
+            </summary>
+        </member>
+        <member name="P:Logger.Core.ILogModel.Time">
+            <summary>
+            Log time
+            </summary>
+        </member>
+        <member name="T:Logger.Core.Logger">
+            <summary>
+            Logger core
+            </summary>
+        </member>
+        <member name="M:Logger.Core.Logger.#ctor">
+            <summary>
+            Initialize the logger and gets the synchronization context
+            </summary>
+        </member>
+        <member name="E:Logger.Core.Logger.PropertyChanged">
+            <summary>
+            Occurs when a property value changes.
+            </summary>
+        </member>
+        <member name="P:Logger.Core.Logger.LogLevel">
+            <summary>
+            Log Level
+            </summary>
+        </member>
+        <member name="P:Logger.Core.Logger.LogLimit">
+            <summary>
+            Log limit for display
+            </summary>
+        </member>
+        <member name="P:Logger.Core.Logger.Logs">
+            <summary>
+            All logs for current instance
+            </summary>
+        </member>
+        <member name="M:Logger.Core.Logger.Log(System.String,Logger.Core.LogLevel,System.String,System.String,System.Int32)">
+            <summary>
+            Logs info/warning/errors/debug messages
+            </summary>
+            <param name="message">Message to log</param>
+            <param name="level">Log level</param>
+            <param name="origin">Origin of log</param>
+            <param name="filePath">File path</param>
+            <param name="lineNumber">Line number</param>
+        </member>
+        <member name="M:Logger.Core.Logger.Log(System.Exception,System.String,System.String,System.Int32)">
+            <summary>
+            Logs the exception as a Error level
+            </summary>
+            <param name="ex">Exception</param>
+            <param name="origin">Origin of exception</param>
+            <param name="filePath">File path</param>
+            <param name="lineNumber">Line number</param>
+        </member>
+        <member name="M:Logger.Core.Logger.OnPropertyChanged(System.String)">
+            <summary>
+            Call this to fire a <see cref="E:Logger.Core.Logger.PropertyChanged"/> event
+            </summary>
+            <param name="name"></param>
+        </member>
+        <member name="T:Logger.Core.LogModel">
+            <summary>
+            Log model for logger
+            </summary>
+        </member>
+        <member name="M:Logger.Core.LogModel.#ctor">
+            <summary>
+            Model sets time on initialization
+            </summary>
+        </member>
+        <member name="P:Logger.Core.LogModel.Message">
+            <summary>
+            Message to log
+            </summary>
+        </member>
+        <member name="P:Logger.Core.LogModel.LineNumber">
+            <summary>
+            Line number where log coming from (Sets automatically using Reflection)
+            </summary>
+        </member>
+        <member name="P:Logger.Core.LogModel.FilePath">
+            <summary>
+            File path where log coming from (Sets automatically using Reflection)
+            </summary>
+        </member>
+        <member name="P:Logger.Core.LogModel.Origin">
+            <summary>
+            Origin of Log (Sets automatically using Reflection)
+            </summary>
+        </member>
+        <member name="P:Logger.Core.LogModel.Level">
+            <summary>
+            Level to filter out logs
+            </summary>
+        </member>
+        <member name="P:Logger.Core.LogModel.Time">
+            <summary>
+            Log time
+            </summary>
+        </member>
+        <member name="T:Logger.Core.LogControlViewModel">
+            <summary>
+            Log control view model for WPF UI
+            </summary>
+        </member>
+        <member name="M:Logger.Core.LogControlViewModel.#ctor(Logger.Core.ILogger)">
+            <summary>
+            Base constructor
+            </summary>
+            <param name="logger"></param>
+        </member>
+        <member name="P:Logger.Core.LogControlViewModel.Logger">
+            <summary>
+            Logger
+            </summary>
+        </member>
+    </members>
+</doc>

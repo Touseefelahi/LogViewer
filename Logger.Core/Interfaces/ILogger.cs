@@ -4,12 +4,24 @@ using System.Runtime.CompilerServices;
 
 namespace Logger.Core
 {
+    /// <summary>
+    /// Logger interface
+    /// </summary>
     public interface ILogger
     {
+        /// <summary>
+        /// Log Level
+        /// </summary>
         LogLevel LogLevel { get; set; }
 
+        /// <summary>
+        /// All logs for current instance
+        /// </summary>
         ObservableCollection<ILogModel> Logs { get; set; }
 
+        /// <summary>
+        /// Log limit for display
+        /// </summary>
         int LogLimit { get; set; }
 
         /// <summary>

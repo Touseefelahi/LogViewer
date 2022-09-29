@@ -1,17 +1,27 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>netstandard1.0</TargetFramework>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Authors>Touseef Elahi</Authors>
-    <Company>Stira.sa</Company>
-    <Product>Log viewer core</Product>
-    <PackageId>SimpleLogger.Core</PackageId>
-    <Version>1.0.4</Version>
-    <Description>Logviewer core [Default Log Limit Count =1000, it can be changed by changing the LogLimit property]</Description>
-    <PackageProjectUrl>https://github.com/Touseefelahi/LogViewer</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/Touseefelahi/LogViewer</RepositoryUrl>
-    <RepositoryType>Github</RepositoryType>
-    <PackageTags>Log</PackageTags>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFrameworks>netcoreapp3.0;net48</TargetFrameworks>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<Authors>Touseef Elahi</Authors>
+		<Company>Stira.sa</Company>
+		<Product>Log viewer core</Product>
+		<PackageId>SimpleLogger.Core</PackageId>
+		<Version>1.0.4</Version>
+		<Description>Logviewer core [Default Log Limit Count =1000, it can be changed by changing the LogLimit property]</Description>
+		<PackageProjectUrl>https://github.com/Touseefelahi/LogViewer</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/Touseefelahi/LogViewer</RepositoryUrl>
+		<RepositoryType>Github</RepositoryType>
+		<PackageTags>Log</PackageTags>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<DocumentationFile>D:\VisualStudioProjects\Visual Studio 2019\Nuget Packages\Logger\Logger.Core\SimpleLogger.Core.xml</DocumentationFile>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Reference Include="PresentationFramework">
+			<HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\PresentationFramework.dll</HintPath>
+		</Reference>
+	</ItemGroup>
 </Project>
