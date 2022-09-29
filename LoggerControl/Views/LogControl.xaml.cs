@@ -1,7 +1,4 @@
-﻿using Logger.Core;
-using System;
-using System.Collections.Specialized;
-using System.Threading.Tasks;
+﻿using System.Collections.Specialized;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -47,6 +44,14 @@ namespace LoggerControl.Views
             datagrid.ScrollIntoView(datagrid.Items[datagrid.Items.Count - 1]);
         }
 
+        private void CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            if (autoScroll)
+            {
+                ScrollToEnd(dataGridLogs);
+            }
+        }
+
         private void DeveloperVisibilityChanged(bool newValue)
         {
             IsDeveloperControlVisible = newValue;
@@ -61,14 +66,6 @@ namespace LoggerControl.Views
                 Sender.Visibility = Visibility.Collapsed;
                 Origin.Visibility = Visibility.Collapsed;
                 Line.Visibility = Visibility.Collapsed;
-            }
-        }
-
-        private void CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
-        {
-            if (autoScroll)
-            {
-                ScrollToEnd(dataGridLogs);
             }
         }
 
